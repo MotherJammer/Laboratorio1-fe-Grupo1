@@ -19,22 +19,13 @@
       name: 'deleteEmergency',
       components: {
       },
-      data: function () {
-        return {
-          emergency_name: '',
-          emergency_status: '',
-          emergency_details: '',
-          error: false,
-          error_msg: ''
-        }
-      },
       methods: {
         delete_Emergency () {
           const id = this.id
           const data = 'http://localhost:8081/emergencias/' + id
           axios.delete(data).then(response => {
-            console.log('eliminacion exitosa')
-          })
+            console.log('eliminacion exitosa')}
+          )
         }
       }
     }

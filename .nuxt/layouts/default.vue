@@ -4,16 +4,16 @@
       <nav><!-- Enlaces de navegación-->
         <ul>
           <li>
-            <a href="/Emergency/addEmergency">Agregar Emergencia</a>
+            <a href="/Emergency/addEmergency">Agregar</a>
           </li>
           <li>
-            <a href="/Emergency/modifyEmergency">Modificar Emergencia</a>
+            <a href="/Emergency/modifyEmergency">Modificar</a>
           </li>
           <li>
-            <a href="/Emergency/getEmergency">Consultar Emergencia</a>
+            <a href="/Emergency/getEmergency">Consultar</a>
           </li>
           <li>
-            <a href="/Emergency/deleteEmergency">Borrar Emergencia</a>
+            <a href="/Emergency/deleteEmergency">Borrar</a>
           </li>
         </ul>
       </nav>
