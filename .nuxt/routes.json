@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Emergency-addEmergency",
+    "path": "/Emergency/addEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\addEmergency.vue",
+    "chunkName": "pages/Emergency/addEmergency"
+  },
+  {
+    "name": "Emergency-deleteEmergency",
+    "path": "/Emergency/deleteEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\deleteEmergency.vue",
+    "chunkName": "pages/Emergency/deleteEmergency"
+  },
+  {
+    "name": "Emergency-getEmergency",
+    "path": "/Emergency/getEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\getEmergency.vue",
+    "chunkName": "pages/Emergency/getEmergency"
+  },
+  {
+    "name": "Emergency-modifyEmergency",
+    "path": "/Emergency/modifyEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\modifyEmergency.vue",
+    "chunkName": "pages/Emergency/modifyEmergency"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
