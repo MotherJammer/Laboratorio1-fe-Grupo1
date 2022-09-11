@@ -82,5 +82,3 @@ sw.*
 
 # Vim swap files
 *.swp
-
-.nuxt/

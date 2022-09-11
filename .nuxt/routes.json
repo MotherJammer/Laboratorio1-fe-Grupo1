@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Emergency-addEmergency",
+    "path": "/Emergency/addEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\addEmergency.vue",
+    "chunkName": "pages/Emergency/addEmergency",
+    "_name": "_09266539"
+  },
+  {
+    "name": "Emergency-deleteEmergency",
+    "path": "/Emergency/deleteEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\deleteEmergency.vue",
+    "chunkName": "pages/Emergency/deleteEmergency",
+    "_name": "_f782c526"
+  },
+  {
+    "name": "Emergency-getEmergency",
+    "path": "/Emergency/getEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\getEmergency.vue",
+    "chunkName": "pages/Emergency/getEmergency",
+    "_name": "_6b6cc6b8"
+  },
+  {
+    "name": "Emergency-modifyEmergency",
+    "path": "/Emergency/modifyEmergency",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\modifyEmergency.vue",
+    "chunkName": "pages/Emergency/modifyEmergency",
+    "_name": "_293b5abe"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\User\\\\Desktop\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_cfcd372c"
+  }
+]
