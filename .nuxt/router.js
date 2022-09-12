@@ -38,6 +38,9 @@ export const routerOptions = {
     component: _293b5abe,
     name: "Emergency-modifyEmergency"
   }, {
+    path: "/Emergency/mostrarEmergencias",
+    component: _33766c55,
+    name: "Emergency-mostrarEmergencias"
     path: "/",
     component: _cfcd372c,
     name: "index"
