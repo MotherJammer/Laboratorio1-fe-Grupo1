@@ -1,8 +1,8 @@
 <template>
   <div class="get_emergency">
     <h2 class="p-2 text-center">Eliminar una emergencia</h2>
-    <h4>Ingrese el ID de la emergencia a eliminar</h4>
-    <form v-on:submit.prevent="delete_Emergency">
+    <h5 class="p-2">Ingrese el ID de la emergencia a eliminar</h5>
+    <form class="p-2" v-on:submit.prevent="delete_Emergency">
       <ul>
         <input
           type="text"
@@ -12,11 +12,12 @@
         />
       </ul>
       <div id="btn_get">
-        <input
+        <b-button
           type="submit"
           class="fadeIn fourth"
           value="Eliminar Emergencia"
-        />
+          >Eliminar emergencia</b-button
+        >
       </div>
     </form>
   </div>

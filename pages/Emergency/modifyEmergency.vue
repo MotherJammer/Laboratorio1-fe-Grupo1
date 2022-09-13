@@ -1,9 +1,9 @@
 <template>
   <div class="modify_emergency">
     <h2 class="p-2 text-center">Modificar una emergencia</h2>
-    <h2>Datos de la emergencia</h2>
-    <form v-on:submit.prevent="modify_Emergency">
-      <h4>ID Emergencia a modificar</h4>
+    <h3 class="p-2">Datos de la emergencia</h3>
+    <form class="p-2" v-on:submit.prevent="modify_Emergency">
+      <h5>ID emergencia a modificar</h5>
       <ul>
         <input
           type="text"
@@ -12,7 +12,7 @@
           placeholder="Id de la emergencia"
         />
       </ul>
-      <h4>Nombre Emergencia</h4>
+      <h5>Nombre emergencia</h5>
       <ul>
         <input
           type="text"
@@ -21,7 +21,7 @@
           placeholder="Terremoto en Talca"
         />
       </ul>
-      <h4>Estado de la emergencia</h4>
+      <h5>Estado de la emergencia</h5>
       <ul>
         <input
           type="text"
@@ -30,11 +30,11 @@
           placeholder="Reclutando"
         />
       </ul>
-      <h4>Institucion</h4>
+      <h5>Institución</h5>
       <ul>
         <input type="int" id="id_in" v-model="id_in" placeholder="1" />
       </ul>
-      <p>Detalles de la emergencia y requisitos para los voluntarios</p>
+      <h5>Detalles de la emergencia y requisitos para los voluntarios</h5>
       <textarea
         type="text"
         id="emergency_details-id"
@@ -44,11 +44,9 @@
         rows="20"
       ></textarea>
       <div id="btn_upload">
-        <input
-          type="submit"
-          class="fadeIn fourth"
-          value="Modificar Emergencia"
-        />
+        <b-button type="submit" class="fadeIn fourth"
+          >Modificar emergencia</b-button
+        >
       </div>
     </form>
   </div>

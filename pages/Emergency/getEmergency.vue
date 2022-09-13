@@ -1,8 +1,8 @@
 <template>
   <div class="get_emergency">
     <h2 class="p-2 text-center">Obtener una emergencia</h2>
-    <h4>Ingrese el ID de la emergencia a consultar</h4>
-    <form v-on:submit.prevent="retrieveEmergencies">
+    <h5 class="p-2">Ingrese el ID de la emergencia a consultar</h5>
+    <form class="p-2" v-on:submit.prevent="retrieveEmergencies">
       <ul>
         <input
           type="text"
@@ -12,11 +12,9 @@
         />
       </ul>
       <div id="btn_get">
-        <input
-          type="submit"
-          class="fadeIn fourth"
-          value="Consultar Emergencia"
-        />
+        <b-button type="submit" class="fadeIn fourth"
+          >Consultar emergencia</b-button
+        >
       </div>
       <pre>{{ emergencias }}</pre>
     </form>
