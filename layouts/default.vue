@@ -1,5 +1,7 @@
 <template>
   <div class="wrapper">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+
     <header>
       <div>
         <b-navbar toggleable="lg" type="dark" variant="primary">

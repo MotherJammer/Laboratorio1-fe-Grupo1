@@ -10,7 +10,6 @@ const _3de5c64e = () => interopDefault(import('../pages/Emergency/getEmergency.v
 const _31dff269 = () => interopDefault(import('../pages/Emergency/modifyEmergency.vue' /* webpackChunkName: "pages/Emergency/modifyEmergency" */))
 const _00c06111 = () => interopDefault(import('../pages/Emergency/mostrarEmergencias.vue' /* webpackChunkName: "pages/Emergency/mostrarEmergencias" */))
 const _2857a562 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _4bda4366 = () => interopDefault(import('../pages/_app.js' /* webpackChunkName: "pages/_app" */))
 
 const emptyFn = () => {}
 
@@ -47,10 +46,6 @@ export const routerOptions = {
     path: "/",
     component: _2857a562,
     name: "index"
-  }, {
-    path: "/:app",
-    component: _4bda4366,
-    name: "app"
   }],
 
   fallback: false

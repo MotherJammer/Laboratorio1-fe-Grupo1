@@ -40,12 +40,5 @@
     "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/index.vue",
     "chunkName": "pages/index",
     "_name": "_2857a562"
-  },
-  {
-    "name": "app",
-    "path": "/:app",
-    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/_app.js",
-    "chunkName": "pages/_app",
-    "_name": "_4bda4366"
   }
 ]

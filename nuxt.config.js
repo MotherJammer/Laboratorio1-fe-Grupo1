@@ -1,3 +1,5 @@
+import BootstrapVue from "bootstrap-vue";
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -21,10 +23,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["@/css/main.min.css"],
+  css: ["@assets/sass/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ["~/plugins/bootstrap.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -33,11 +35,23 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    (module.exports = {
-      modules: ["bootstrap-vue/nuxt"],
-    }),
-  ],
+  modules: ["bootstrap-vue/nuxt"],
+
+  // specify module rules for css and scss
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
+
+  // use these settings to use custom css
+  bootstrapVue: {
+    bootstrapCSS: false,
+    icons: true,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
