@@ -35,10 +35,31 @@
             <ul>
               <input type="int" id="id_in" v-model="id_in" placeholder="1" />
             </ul>
+            <!---------------- ACÁ ES DONDE SE CARGAN LAS HABILIDADES DE LA BASE --------------->
             <h5>Habilidades requeridas</h5>
-            <div>
-              <p>POR HACER: Lista tickeable para seleccionar habilidades</p>
+            <div class="containerHabilidades">
+              <input type="checkbox" name="habilidad" value="1" />
+              Habilidad 1 <br />
+              <input type="checkbox" name="habilidad" value="2" />
+              Habilidad 2 <br />
+              <input type="checkbox" name="habilidad" value="3" />
+              Habilidad 3 <br />
+              <input type="checkbox" name="habilidad" value="4" />
+              Habilidad 4 <br />
+              <input type="checkbox" name="habilidad" value="5" />
+              Habilidad 5 <br />
+              <input type="checkbox" name="habilidad" value="6" />
+              Habilidad 6 <br />
+              <input type="checkbox" name="habilidad" value="7" />
+              Habilidad 7 <br />
+              <input type="checkbox" name="habilidad" value="8" />
+              Habilidad 8 <br />
+              <input type="checkbox" name="habilidad" value="9" />
+              Habilidad 9 <br />
+              <input type="checkbox" name="habilidad" value="10" />
+              Habilidad 10 <br />
             </div>
+            <!----------------------------------------------------------------------------------->
             <h5>Detalles de la emergencia</h5>
             <textarea
               type="text"
@@ -76,6 +97,7 @@ export default {
       emergency_name: "",
       emergency_status: "",
       id_in: null,
+      emergency_habilities: [], //ACÁ ENTRARÍAN LAS HABILIDADES SELECCIONADAS
       emergency_details: "",
       voluntarios: 0,
       error: false,
@@ -97,6 +119,16 @@ export default {
   methods: {
     upload_Emergency() {
       const data = "http://localhost:8081/emergencias/";
+      //--------------------------------------------------------------------------------
+      //Mecanismo propuesto para recolectar las habilidades seleccionadas
+      var habilidades = document.getElementsByName("habilidad");
+      var habilidades_seleccionadas = [];
+      for (var i = 0; i < habilidades.length; i++) {
+        if (habilidades[i].checked) {
+          habilidades_seleccionadas.push(habilidades[i].value);
+        }
+      }
+      //--------------------------------------------------------------------------------
       axios
         .post(data, {
           nombre: this.emergency_name,
@@ -104,11 +136,25 @@ export default {
           detalles: this.emergency_details,
           voluntarios_reg: this.voluntarios,
           id_in: this.id_in,
+          //emergency_habilities: habilidades_seleccionadas, //ACÁ ENTRARÍAN LAS HABILIDADES SELECCIONADAS PARA AXIOS
         })
         .then((response) => {
+          //En esta alerta es donde se debe cargar el ID con que quedó la emergencia en la base
+          //Una vez se haya obtenido el servicio, se debe cambiar el mensaje del alert a el formato:
+          //alert("Emergencia cargada con éxito. El ID de la emergencia es: " + id_emergencia);
+          alert("Emergencia cargada con éxito. El ID de la emergencia es: X");
           console.log("creacion de emergencia exitosa");
         });
     },
   },
 };
 </script>
+
+<style>
+.containerHabilidades {
+  border: 1px solid #000;
+  width: 509px;
+  height: 150px;
+  overflow-y: scroll;
+}
+</style>
