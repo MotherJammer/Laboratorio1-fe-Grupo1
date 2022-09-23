@@ -106,15 +106,14 @@ export default {
       var dataFormat = new FormData();
       dataFormat.append("idHabilidades",this.emergency_sendHabilities)
       const data = "http://localhost:8081/emergencias/";
-      const dataHabilidadades = "http://localhost:8081/testHabilidades";
+      const dataHabilidadades = "http://localhost:8081/eme_habilidad";
       axios
         .post(data, {
           nombre: this.emergency_name,
           estado_eme: this.emergency_status,
           detalles: this.emergency_details,
           voluntarios_reg: this.voluntarios,
-          id_in: this.id_in,
-          //emergency_habilities: habilidades_seleccionadas, //ACÁ ENTRARÍAN LAS HABILIDADES SELECCIONADAS PARA AXIOS
+          id_in: this.id_in
         })
         .then((response) => {
           alert("Emergencia cargada con éxito. El ID de la emergencia es: X");
