@@ -10,36 +10,62 @@
           <h5 class="p-2">Nombre emergencia</h5>
           <form class="p-2" v-on:submit.prevent="upload_Emergency">
             <ul>
-              <input type="text" id="emergency_name-id" v-model="emergency_name" placeholder="Terremoto en Talca" />
+              <input
+                type="text"
+                id="emergency_name-id"
+                v-model="emergency_name"
+                placeholder="Terremoto en Talca"
+              />
             </ul>
             <h5>Estado de la emergencia</h5>
             <ul>
-              <input list="estadoEmergencia" id="emergency_status-id" v-model="emergency_status"
-                placeholder="Seleccione..." />
+              <input
+                list="estadoEmergencia"
+                id="emergency_status-id"
+                v-model="emergency_status"
+                placeholder="Seleccione..."
+              />
               <datalist id="estadoEmergencia">
                 <option value="Reclutando"></option>
                 <option value="En proceso"></option>
                 <option value="Finalizada"></option>
               </datalist>
             </ul>
-            <h5>Institución (ID)</h5>
+            <h5>Nombre de la institución</h5>
             <ul>
-              <input type="int" id="id_in" v-model="id_in" placeholder="1" />
+              <input
+                type="int"
+                id="nombre_in"
+                v-model="nombre_in"
+                placeholder="Institución..."
+              />
             </ul>
             <!---------------- ACÁ ES DONDE SE CARGAN LAS HABILIDADES DE LA BASE --------------->
             <h5>Habilidades requeridas</h5>
             <div class="containerHabilidades">
               <li v-for="habilidad in emergency_habilities">
-                <input type="checkbox"  v-model="emergency_sendHabilities" :value="habilidad.id" >
-                <label :for="habilidad.nombre"> {{habilidad.nombre}} </label>
+                <input
+                  type="checkbox"
+                  v-model="emergency_sendHabilities"
+                  :value="habilidad.id"
+                />
+                <label :for="habilidad.nombre"> {{ habilidad.nombre }} </label>
               </li>
             </div>
             <!----------------------------------------------------------------------------------->
             <h5>Detalles de la emergencia</h5>
-            <textarea type="text" id="emergency_details-id" v-model="emergency_details" placeholder="Detalles" cols="50"
-              rows="10"></textarea>
+            <textarea
+              type="text"
+              id="emergency_details-id"
+              v-model="emergency_details"
+              placeholder="Detalles"
+              cols="50"
+              rows="10"
+            ></textarea>
             <div id="btn_upload">
-              <b-button type="submit" class="fadeIn fourth">Cargar emergencia</b-button>
+              <b-button type="submit" class="fadeIn fourth"
+                >Cargar emergencia</b-button
+              >
             </div>
           </form>
         </div>
@@ -63,9 +89,9 @@ export default {
     return {
       emergency_name: "",
       emergency_status: "",
-      id_in: null,
+      nombre_in: "",
       emergency_habilities: [],
-      emergency_sendHabilities :[], //ACÁ ENTRARÍAN LAS HABILIDADES SELECCIONADAS
+      emergency_sendHabilities: [],
       emergency_details: "",
       voluntarios: 0,
       error: false,
@@ -85,9 +111,8 @@ export default {
     };
   },
   created() {
-    this.retrieveHabilidades()
-  }
-  ,
+    this.retrieveHabilidades();
+  },
   methods: {
     retrieveHabilidades() {
       axios
@@ -98,13 +123,12 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-        })
-
+        });
     },
 
     upload_Emergency() {
       var dataFormat = new FormData();
-      dataFormat.append("idHabilidades",this.emergency_sendHabilities)
+      dataFormat.append("idHabilidades", this.emergency_sendHabilities);
       const data = "http://localhost:8081/emergencias/";
       const dataHabilidadades = "http://localhost:8081/eme_habilidad";
       axios
@@ -113,16 +137,17 @@ export default {
           estado_eme: this.emergency_status,
           detalles: this.emergency_details,
           voluntarios_reg: this.voluntarios,
-          id_in: this.id_in
+          nombre_in: this.nombre_in,
         })
-        .then((response) => {
-          alert("Emergencia cargada con éxito. El ID de la emergencia es: X");
+        .then(function (response) {
+          alert(
+            "Emergencia cargada con éxito. El ID de la emergencia es: " +
+              response.data.id_eme
+          );
           console.log("creacion de emergencia exitosa");
         });
-        axios
-        .post(dataHabilidadades, dataFormat)
+      axios.post(dataHabilidadades, dataFormat);
     },
-
   },
 };
 </script>
