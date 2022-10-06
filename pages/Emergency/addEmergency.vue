@@ -22,9 +22,12 @@
                 <option value="Finalizada"></option>
               </datalist>
             </ul>
-            <h5>Nombre de la institución</h5>
+            <h5>Institución</h5>
             <ul>
-              <input type="int" id="nombre_in" v-model="nombre_in" placeholder="Institución...">
+              <div v-for="item in instituciones">
+                <input name="institucion" type="radio" v-bind:value="item.id" v-model="id_in">
+                <label>{{item.nombre}}</label>
+              </div>
             </ul>
             <!---------------- ACÁ ES DONDE SE CARGAN LAS HABILIDADES DE LA BASE --------------->
             <h5>Habilidades requeridas</h5>
@@ -67,25 +70,16 @@ export default {
       emergency_habilities: [],
       emergency_sendHabilities: [],
       emergency_details: "",
+      id_in:0,
       voluntarios: 0,
       error: false,
       error_msg: "",
-      instituciones: [
-        { id: 1, nombre_institucion: "Fowler" },
-        { id: 2, nombre_institucion: "Carter" },
-        { id: 3, nombre_institucion: "Rose" },
-        { id: 4, nombre_institucion: "Moore" },
-        { id: 5, nombre_institucion: "Reeds" },
-        { id: 6, nombre_institucion: "Jammer" },
-        { id: 7, nombre_institucion: "Eidres" },
-        { id: 8, nombre_institucion: "Leams" },
-        { id: 9, nombre_institucion: "Pleto" },
-        { id: 10, nombre_institucion: "Yiyi" },
-      ],
+      instituciones: [],
     };
   },
   created() {
-    this.retrieveHabilidades()
+    this.retrieveHabilidades();
+    this.retrieveInstituciones();
   },
   methods: {
     retrieveHabilidades() {
@@ -99,7 +93,13 @@ export default {
           console.log(error);
         });
     },
-
+    retrieveInstituciones(){
+	    axios
+        .get("http://localhost:8081/instituciones")
+        .then((response)=> {
+          this.instituciones = response.data
+        })
+    },
     upload_Emergency() {
       var dataFormat = new FormData();
       var dataEm = new FormData();
@@ -109,6 +109,7 @@ export default {
       dataEm.append('detalles', this.emergency_details);
       dataEm.append('voluntarios_reg', this.voluntarios);
       dataEm.append('nombre_in', this.nombre_in);
+      dataEm.append('id_in', this.id_in);
       const data = "http://localhost:8081/emergencias/";
       const dataHabilidadades = "http://localhost:8081/eme_habilidad";
       axios
