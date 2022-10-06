@@ -2,37 +2,43 @@
   {
     "name": "Emergency-addEmergency",
     "path": "/Emergency/addEmergency",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\addEmergency.vue",
-    "chunkName": "pages/Emergency/addEmergency"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/addEmergency.vue",
+    "chunkName": "pages/Emergency/addEmergency",
+    "_name": "_1fe9e56e"
   },
   {
     "name": "Emergency-deleteEmergency",
     "path": "/Emergency/deleteEmergency",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\deleteEmergency.vue",
-    "chunkName": "pages/Emergency/deleteEmergency"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/deleteEmergency.vue",
+    "chunkName": "pages/Emergency/deleteEmergency",
+    "_name": "_e63995d0"
   },
   {
     "name": "Emergency-getEmergency",
     "path": "/Emergency/getEmergency",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\getEmergency.vue",
-    "chunkName": "pages/Emergency/getEmergency"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/getEmergency.vue",
+    "chunkName": "pages/Emergency/getEmergency",
+    "_name": "_3de5c64e"
   },
   {
     "name": "Emergency-modifyEmergency",
     "path": "/Emergency/modifyEmergency",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\modifyEmergency.vue",
-    "chunkName": "pages/Emergency/modifyEmergency"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/modifyEmergency.vue",
+    "chunkName": "pages/Emergency/modifyEmergency",
+    "_name": "_31dff269"
   },
   {
     "name": "Emergency-mostrarEmergencias",
     "path": "/Emergency/mostrarEmergencias",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\Emergency\\\\mostrarEmergencias.vue",
-    "chunkName": "pages/Emergency/mostrarEmergencias"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/mostrarEmergencias.vue",
+    "chunkName": "pages/Emergency/mostrarEmergencias",
+    "_name": "_00c06111"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Matix\\\\Desktop\\\\Intellij projects\\\\Laboratorio1-fe-Grupo1\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2857a562"
   }
 ]

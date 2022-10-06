@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _75d4b31e = () => interopDefault(import('..\\pages\\Emergency\\addEmergency.vue' /* webpackChunkName: "pages/Emergency/addEmergency" */))
-const _578d6d30 = () => interopDefault(import('..\\pages\\Emergency\\deleteEmergency.vue' /* webpackChunkName: "pages/Emergency/deleteEmergency" */))
-const _36f7ea89 = () => interopDefault(import('..\\pages\\Emergency\\getEmergency.vue' /* webpackChunkName: "pages/Emergency/getEmergency" */))
-const _793606b9 = () => interopDefault(import('..\\pages\\Emergency\\modifyEmergency.vue' /* webpackChunkName: "pages/Emergency/modifyEmergency" */))
-const _7ae62ac1 = () => interopDefault(import('..\\pages\\Emergency\\mostrarEmergencias.vue' /* webpackChunkName: "pages/Emergency/mostrarEmergencias" */))
-const _0d48d18f = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _1fe9e56e = () => interopDefault(import('../pages/Emergency/addEmergency.vue' /* webpackChunkName: "pages/Emergency/addEmergency" */))
+const _e63995d0 = () => interopDefault(import('../pages/Emergency/deleteEmergency.vue' /* webpackChunkName: "pages/Emergency/deleteEmergency" */))
+const _3de5c64e = () => interopDefault(import('../pages/Emergency/getEmergency.vue' /* webpackChunkName: "pages/Emergency/getEmergency" */))
+const _31dff269 = () => interopDefault(import('../pages/Emergency/modifyEmergency.vue' /* webpackChunkName: "pages/Emergency/modifyEmergency" */))
+const _00c06111 = () => interopDefault(import('../pages/Emergency/mostrarEmergencias.vue' /* webpackChunkName: "pages/Emergency/mostrarEmergencias" */))
+const _2857a562 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -24,27 +24,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/Emergency/addEmergency",
-    component: _75d4b31e,
+    component: _1fe9e56e,
     name: "Emergency-addEmergency"
   }, {
     path: "/Emergency/deleteEmergency",
-    component: _578d6d30,
+    component: _e63995d0,
     name: "Emergency-deleteEmergency"
   }, {
     path: "/Emergency/getEmergency",
-    component: _36f7ea89,
+    component: _3de5c64e,
     name: "Emergency-getEmergency"
   }, {
     path: "/Emergency/modifyEmergency",
-    component: _793606b9,
+    component: _31dff269,
     name: "Emergency-modifyEmergency"
   }, {
     path: "/Emergency/mostrarEmergencias",
-    component: _7ae62ac1,
+    component: _00c06111,
     name: "Emergency-mostrarEmergencias"
   }, {
     path: "/",
-    component: _0d48d18f,
+    component: _2857a562,
     name: "index"
   }],
 
