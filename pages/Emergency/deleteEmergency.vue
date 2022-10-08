@@ -38,6 +38,9 @@ export default {
       const id = this.id;
       const data = "http://localhost:8081/emergencias/" + id;
       axios.delete(data).then((response) => {
+        alert(
+          "Emergencia eliminada con éxito"
+        );
         console.log("eliminacion exitosa");
       });
     },
