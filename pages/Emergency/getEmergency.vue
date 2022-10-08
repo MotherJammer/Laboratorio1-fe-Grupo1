@@ -16,7 +16,9 @@
           >Consultar emergencia</b-button
         >
       </div>
-      <pre>{{ emergencias }}</pre>
+      <div>
+        <b-table striped hover :items="emergencias"></b-table>
+      </div>
     </form>
   </div>
 </template>
@@ -31,6 +33,7 @@ export default {
       id: null,
       emergencias: [],
     };
+
   },
   methods: {
     retrieveEmergencies() {
@@ -38,7 +41,7 @@ export default {
         .get("http://localhost:8081/emergencias/" + this.id)
         .then((response) => {
           console.log(response.data);
-          this.emergencias = response.data;
+          this.emergencias = [response.data];
         })
         .catch((error) => {
           console.log(error);
