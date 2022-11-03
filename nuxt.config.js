@@ -26,7 +26,10 @@ export default {
   css: ["@assets/sass/main.scss"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/bootstrap.js"],
+  plugins: [
+    "~/plugins/bootstrap.js",
+    { src: "~/plugins/vue-leaflet", ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -35,7 +38,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["bootstrap-vue/nuxt"],
+  modules: ["bootstrap-vue/nuxt", "nuxt-leaflet"],
 
   // specify module rules for css and scss
   module: {

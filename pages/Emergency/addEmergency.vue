@@ -2,6 +2,7 @@
   <div class="container">
     <div class="row">
       <h2 class="p-2 text-center">Agregar una emergencia</h2>
+      <div>{{ message }}</div>
     </div>
     <div class="row">
       <div class="col">
@@ -73,11 +74,36 @@
           </form>
         </div>
       </div>
+      <div class="col">
+        <h3 class="p-2">Ubicación de la emergencia</h3>
+        <div>{{ point }}</div>
+        <div id="map-wrap" style="height: 50vh">
+          <client-only>
+            <l-map :zoom="10" :center="[-33.456, -70.648]">
+              <l-tile-layer
+                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+              ></l-tile-layer>
+              <l-marker :lat-lng="[-33.456, -70.648]"></l-marker>
+            </l-map>
+          </client-only>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import "leaflet/dist/leaflet";
+import "leaflet/dist/leaflet.css";
+
+var icon = require("leaflet/dist/images/marker-icon.png");
+//Respecto a la creación del ícono con el marcador
+var LeafIcon = L.Icon.extend({
+  options: { iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [-3, -41] },
+});
+var myIcon = new LeafIcon({ iconUrl: icon });
+
+//Manejo con axios
 import axios from "axios";
 export default {
   name: "addEmergency",
@@ -95,7 +121,25 @@ export default {
       error: false,
       error_msg: "",
       instituciones: [],
+      //datos agregados para la ubicación
+      latitude: null,
+      longitude: null,
+      points: [], //colección de puntos cargados de la base de datos
+      mymap: null, //objeto a usar para cargar el mapa en el formulario
+      message: "",
     };
+  },
+  computed: {
+    point() {
+      //Representación del punto seleccionado
+      if (this.latitude && this.longitude) {
+        let lat = this.latitude.toFixed(3);
+        let lon = this.longitude.toFixed(3);
+        return `(${lat}, ${lon})`;
+      } else {
+        return "";
+      }
+    },
   },
   created() {
     this.retrieveHabilidades();

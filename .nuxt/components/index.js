@@ -1,4 +1,4 @@
-export { default as NuxtLogo } from '../..\\components\\NuxtLogo.vue'
+export { default as NuxtLogo } from '../../components/NuxtLogo.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
