@@ -38,7 +38,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["bootstrap-vue/nuxt", "nuxt-leaflet"],
+  modules: ["bootstrap-vue/nuxt"],
 
   // specify module rules for css and scss
   module: {

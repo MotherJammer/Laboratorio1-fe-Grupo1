@@ -8,5 +8,6 @@ const VueLeaflet = {
     Vue.component("l-tile-layer", LTileLayer);
   },
 };
+
 Vue.use(VueLeaflet);
 export default VueLeaflet;

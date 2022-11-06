@@ -10,8 +10,6 @@ import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
 import '../assets/sass/main.scss'
 
-import '../node_modules/leaflet/dist/leaflet.css'
-
 import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b) }

@@ -76,35 +76,26 @@
       </div>
       <div class="col">
         <h3 class="p-2">Ubicación de la emergencia</h3>
-        <div>{{ point }}</div>
-        <div id="map-wrap" style="height: 50vh">
-          <client-only>
-            <l-map :zoom="10" :center="[-33.456, -70.648]">
-              <l-tile-layer
-                url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-              ></l-tile-layer>
-              <l-marker :lat-lng="[-33.456, -70.648]"></l-marker>
-            </l-map>
-          </client-only>
-        </div>
+        <div>Coordenadas seleccionadas: {{ point }}</div>
+        <div>{{ message }}</div>
+        <div id="mapid"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import "leaflet/dist/leaflet";
-import "leaflet/dist/leaflet.css";
+import axios from "axios";
+import "leaflet/dist/leaflet"; //librería leaflet
+import "leaflet/dist/leaflet.css"; //css leaflet
+var icon = require("leaflet/dist/images/marker-icon.png"); //ícono de marcadores
 
-var icon = require("leaflet/dist/images/marker-icon.png");
-//Respecto a la creación del ícono con el marcador
+//Se crea objeto ícono con el marcador
 var LeafIcon = L.Icon.extend({
-  options: { iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [-3, -41] },
+  options: { iconSize: [50, 50], iconAnchor: [50, 50], popupAnchor: [1, -34] },
 });
 var myIcon = new LeafIcon({ iconUrl: icon });
 
-//Manejo con axios
-import axios from "axios";
 export default {
   name: "addEmergency",
   components: {},
@@ -122,8 +113,9 @@ export default {
       error_msg: "",
       instituciones: [],
       //datos agregados para la ubicación
-      latitude: null,
-      longitude: null,
+      latitud: null,
+      longitud: null,
+      name: "",
       points: [], //colección de puntos cargados de la base de datos
       mymap: null, //objeto a usar para cargar el mapa en el formulario
       message: "",
@@ -132,9 +124,9 @@ export default {
   computed: {
     point() {
       //Representación del punto seleccionado
-      if (this.latitude && this.longitude) {
-        let lat = this.latitude.toFixed(3);
-        let lon = this.longitude.toFixed(3);
+      if (this.latitud && this.longitud) {
+        let lat = this.latitud.toFixed(3);
+        let lon = this.longitud.toFixed(3);
         return `(${lat}, ${lon})`;
       } else {
         return "";
@@ -184,6 +176,56 @@ export default {
       });
       axios.post(dataHabilidadades, dataFormat);
     },
+    //-----Métodos relacionados con la ubicación y el mapa-----
+    clearMarkers: function () {
+      this.points.forEach((p) => {
+        this.mymap.removeLayer(p);
+      });
+      this.points = [];
+    },
+
+    async getPoints(map) {
+      try {
+        //Se llama al servicio para obtener los puntos de la base de datos
+        let response = await axios.get("http://localhost:8081/emergencias");
+        console.log(response);
+        let dataPoints = response.data;
+        console.log(dataPoints);
+        //Se recorren los puntos y se agregan al mapa
+        dataPoints.forEach((point) => {
+          let p = [point.latitud, point.longitud];
+          let marker = L.marker(p, { icon: myIcon }) //se crea el marcador
+            .bindPopup(point.nombre); //se agrega el popup con el nombre de la emergencia
+
+          //Se agrega a la lista
+          this.points.push(marker);
+        });
+        //Se agregan los puntos de la lista al mapa
+        this.points.forEach((p) => {
+          p.addTo(map);
+        });
+      } catch (error) {
+        console.log("error", error);
+      }
+    },
+  },
+  mounted: function () {
+    let _this = this;
+    //Se crea el mapa
+    this.mymap = L.map("mapid").setView([-33.456, -70.648], 13);
+    //Se agrega el tile layer de OSM
+    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 100,
+    }).addTo(this.mymap);
+    //Evento para obtener la latitud y longitud al hacer click en el mapa
+    this.mymap.on("click", function (e) {
+      _this.latitud = e.latlng.lat;
+      _this.longitud = e.latlng.lng;
+    });
+    //Se agregan los puntos de la base de datos al mapa
+    this.getPoints(this.mymap);
   },
 };
 </script>
@@ -194,5 +236,10 @@ export default {
   width: 509px;
   height: 150px;
   overflow-y: scroll;
+}
+
+#mapid {
+  height: 400px;
+  width: 100%;
 }
 </style>
