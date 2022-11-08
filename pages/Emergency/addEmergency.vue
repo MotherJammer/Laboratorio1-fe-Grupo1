@@ -164,6 +164,8 @@ export default {
       dataEm.append("voluntarios_reg", this.voluntarios);
       dataEm.append("nombre_in", this.nombre_in);
       dataEm.append("id_in", this.id_in);
+      dataEm.append("longitud", this.longitud);
+      dataEm.append("latitud", this.latitud);
       const data = "http://localhost:8081/emergencias/";
       const dataHabilidadades = "http://localhost:8081/eme_habilidad";
       axios.post(data, dataEm).then((response) => {
