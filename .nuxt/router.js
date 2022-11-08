@@ -8,6 +8,8 @@ const _1fe9e56e = () => interopDefault(import('../pages/Emergency/addEmergency.v
 const _e63995d0 = () => interopDefault(import('../pages/Emergency/deleteEmergency.vue' /* webpackChunkName: "pages/Emergency/deleteEmergency" */))
 const _3de5c64e = () => interopDefault(import('../pages/Emergency/getEmergency.vue' /* webpackChunkName: "pages/Emergency/getEmergency" */))
 const _31dff269 = () => interopDefault(import('../pages/Emergency/modifyEmergency.vue' /* webpackChunkName: "pages/Emergency/modifyEmergency" */))
+const _a85c5be4 = () => interopDefault(import('../pages/Volunteer/addVolunteer.vue' /* webpackChunkName: "pages/Volunteer/addVolunteer" */))
+const _17b08da8 = () => interopDefault(import('../pages/Volunteer/closeVolunteers.vue' /* webpackChunkName: "pages/Volunteer/closeVolunteers" */))
 const _2857a562 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -37,6 +39,14 @@ export const routerOptions = {
     path: "/Emergency/modifyEmergency",
     component: _31dff269,
     name: "Emergency-modifyEmergency"
+  }, {
+    path: "/Volunteer/addVolunteer",
+    component: _a85c5be4,
+    name: "Volunteer-addVolunteer"
+  }, {
+    path: "/Volunteer/closeVolunteers",
+    component: _17b08da8,
+    name: "Volunteer-closeVolunteers"
   }, {
     path: "/",
     component: _2857a562,

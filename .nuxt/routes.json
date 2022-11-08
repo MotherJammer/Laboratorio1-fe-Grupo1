@@ -28,6 +28,20 @@
     "_name": "_31dff269"
   },
   {
+    "name": "Volunteer-addVolunteer",
+    "path": "/Volunteer/addVolunteer",
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Volunteer/addVolunteer.vue",
+    "chunkName": "pages/Volunteer/addVolunteer",
+    "_name": "_a85c5be4"
+  },
+  {
+    "name": "Volunteer-closeVolunteers",
+    "path": "/Volunteer/closeVolunteers",
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Volunteer/closeVolunteers.vue",
+    "chunkName": "pages/Volunteer/closeVolunteers",
+    "_name": "_17b08da8"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/index.vue",

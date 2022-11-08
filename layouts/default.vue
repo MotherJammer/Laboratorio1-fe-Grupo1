@@ -25,6 +25,13 @@
               <b-nav-item href="/Emergency/deleteEmergency"
                 >Borrar emergencia</b-nav-item
               >
+              <b-nav-item href="/Volunteer/addVolunteer"
+                >Agregar voluntario</b-nav-item
+              >
+              <b-nav-item href="/Volunteer/closeVolunteers"
+                >Voluntarios cercanos</b-nav-item
+              >
+              <b-nav-item href="#">Emergencias finalizadas</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
