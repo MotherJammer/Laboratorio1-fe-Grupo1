@@ -7,22 +7,88 @@
       <div class="col">
         <div class="selectEmergency">
           <h3 class="p-2">Seleccione una emergencia</h3>
-          <h5 class="p-2">
-            Acá irá un form donde se selecciona desde una lista de emergencias
-            cercanas
-          </h5>
+          <form class="p-2" v-on:submit.prevent="get_closeVolunteers">
+            <div class="containerEmergencias">
+              <div v-for="item in emergencias">
+                <input
+                  name="emergencia"
+                  type="radio"
+                  v-bind:value="item.id"
+                  v-model="id_eme"
+                />
+                <label>{{ item.nombre }}</label>
+              </div>
+            </div>
+            <h3 class="p-2">Cantidad de voluntarios</h3>
+            <ul>
+              <input
+                type="number"
+                id="numberOf_volunteer"
+                v-model="nVolunteers"
+                placeholder="3"
+              />
+            </ul>
+            <div id="btn_upload">
+              <b-button type="submit" class="fadeIn fourth"
+                >Solicitar voluntarios</b-button
+              >
+            </div>
+          </form>
         </div>
       </div>
       <div class="col">
         <div class="rankingList">
           <h3 class="p-2">Voluntarios más cercanos</h3>
-          <h5>Acá puede ir una tabla donde se carguen los voluntarios</h5>
+          <b-table stripped hover :items="volunteers"></b-table>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import axios from "axios";
 
-<style></style>
+export default {
+  name: "closeVolunteers",
+  components: {},
+  data: () => {
+    return {
+      emergencias: [],
+      id_eme: null,
+      nVolunteers: 0,
+      volunteers: [{ nombre: "Juan", distancia: 100 }], //---DEJAR VACÍO CUANDO get_closeVolunteers ESTÉ LISTO
+    };
+  },
+  created() {
+    this.retrieveEmergencias();
+  },
+  methods: {
+    retrieveEmergencias() {
+      axios
+        .get("http://localhost:8081/emergencias")
+        .then((response) => {
+          this.emergencias = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    get_closeVolunteers() {
+      //Por desarrollar
+      //Gatillado por el formulario, por lo tanto lo que debe suceder es
+      //1. Enviar la petición para obtener los voluntarios más cercanos (id_eme, nVolunteers)
+      //2. Actualizar la tabla con los resultados obtenidos
+    },
+  },
+};
+</script>
+
+<style>
+.containerEmergencias {
+  border: 1px solid #000;
+  width: 509px;
+  height: 150px;
+  overflow-y: scroll;
+}
+</style>
