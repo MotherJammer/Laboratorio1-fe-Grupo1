@@ -115,7 +115,6 @@ export default {
       //datos agregados para la ubicación
       latitud: null,
       longitud: null,
-      name: "",
       points: [], //colección de puntos cargados de la base de datos
       mymap: null, //objeto a usar para cargar el mapa en el formulario
       message: "",
