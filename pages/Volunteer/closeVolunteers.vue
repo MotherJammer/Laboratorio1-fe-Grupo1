@@ -76,11 +76,13 @@ export default {
     },
     get_closeVolunteers(){
       var dataFormat = new FormData();
-      dataFormat.append("id_em", this.id_eme);
+      dataFormat.append("id_eme", this.id_eme);
       dataFormat.append("cantidad", this.nVolunteers);
       const url = "http://localhost:8081/voluntarios/closer";
-      axios.get(url,dataFormat).then((response) => {
-        console.log(dataFormat);
+      axios
+      .post(url,dataFormat)
+      .then((response)=>{
+        console.log(response);
       });
     }
   },
