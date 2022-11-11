@@ -57,7 +57,7 @@ export default {
       emergencias: [],
       id_eme: 0,
       nVolunteers: 0,
-      volunteers: [{ nombre: "Juan", distancia: 100 }], //---DEJAR VACÍO CUANDO get_closeVolunteers ESTÉ LISTO
+      volunteers: [], //---DEJAR VACÍO CUANDO get_closeVolunteers ESTÉ LISTO
     };
   },
   created() {
@@ -82,6 +82,7 @@ export default {
       axios
       .post(url,dataFormat)
       .then((response)=>{
+        this.volunteers = response.data
         console.log(response);
       });
     }
