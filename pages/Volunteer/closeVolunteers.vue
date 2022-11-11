@@ -55,7 +55,7 @@ export default {
   data: () => {
     return {
       emergencias: [],
-      id_eme: null,
+      id_eme: 0,
       nVolunteers: 0,
       volunteers: [{ nombre: "Juan", distancia: 100 }], //---DEJAR VACÍO CUANDO get_closeVolunteers ESTÉ LISTO
     };
@@ -74,12 +74,15 @@ export default {
           console.log(error);
         });
     },
-    get_closeVolunteers() {
-      //Por desarrollar
-      //Gatillado por el formulario, por lo tanto lo que debe suceder es
-      //1. Enviar la petición para obtener los voluntarios más cercanos (id_eme, nVolunteers)
-      //2. Actualizar la tabla con los resultados obtenidos
-    },
+    get_closeVolunteers(){
+      var dataFormat = new FormData();
+      dataFormat.append("id_em", this.id_eme);
+      dataFormat.append("cantidad", this.nVolunteers);
+      const url = "http://localhost:8081/voluntarios/closer";
+      axios.get(url,dataFormat).then((response) => {
+        console.log(dataFormat);
+      });
+    }
   },
 };
 </script>
