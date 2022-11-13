@@ -31,6 +31,9 @@
               <b-nav-item href="/Volunteer/closeVolunteers"
                 >Voluntarios cercanos</b-nav-item
               >
+              <b-nav-item href="/Emergency/finishedEmergency"
+                >Emergencias finalizadas</b-nav-item>   
+                         
               <b-nav-item href="#">Emergencias finalizadas</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
