@@ -34,7 +34,6 @@
               <b-nav-item href="/Emergency/finishedEmergency"
                 >Emergencias finalizadas</b-nav-item>   
                          
-              <b-nav-item href="#">Emergencias finalizadas</b-nav-item>
             </b-navbar-nav>
           </b-collapse>
         </b-navbar>
