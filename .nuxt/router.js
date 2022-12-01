@@ -6,9 +6,12 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _1fe9e56e = () => interopDefault(import('../pages/Emergency/addEmergency.vue' /* webpackChunkName: "pages/Emergency/addEmergency" */))
 const _e63995d0 = () => interopDefault(import('../pages/Emergency/deleteEmergency.vue' /* webpackChunkName: "pages/Emergency/deleteEmergency" */))
+const _6f605711 = () => interopDefault(import('../pages/Emergency/FinishedEmergency.vue' /* webpackChunkName: "pages/Emergency/FinishedEmergency" */))
 const _3de5c64e = () => interopDefault(import('../pages/Emergency/getEmergency.vue' /* webpackChunkName: "pages/Emergency/getEmergency" */))
 const _31dff269 = () => interopDefault(import('../pages/Emergency/modifyEmergency.vue' /* webpackChunkName: "pages/Emergency/modifyEmergency" */))
 const _a85c5be4 = () => interopDefault(import('../pages/Volunteer/addVolunteer.vue' /* webpackChunkName: "pages/Volunteer/addVolunteer" */))
+const _36dbc622 = () => interopDefault(import('../pages/Volunteer/affectedVolunteers.vue' /* webpackChunkName: "pages/Volunteer/affectedVolunteers" */))
+const _dcaccbfe = () => interopDefault(import('../pages/Volunteer/analysis.vue' /* webpackChunkName: "pages/Volunteer/analysis" */))
 const _17b08da8 = () => interopDefault(import('../pages/Volunteer/closeVolunteers.vue' /* webpackChunkName: "pages/Volunteer/closeVolunteers" */))
 const _2857a562 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -32,6 +35,10 @@ export const routerOptions = {
     component: _e63995d0,
     name: "Emergency-deleteEmergency"
   }, {
+    path: "/Emergency/FinishedEmergency",
+    component: _6f605711,
+    name: "Emergency-FinishedEmergency"
+  }, {
     path: "/Emergency/getEmergency",
     component: _3de5c64e,
     name: "Emergency-getEmergency"
@@ -43,6 +50,14 @@ export const routerOptions = {
     path: "/Volunteer/addVolunteer",
     component: _a85c5be4,
     name: "Volunteer-addVolunteer"
+  }, {
+    path: "/Volunteer/affectedVolunteers",
+    component: _36dbc622,
+    name: "Volunteer-affectedVolunteers"
+  }, {
+    path: "/Volunteer/analysis",
+    component: _dcaccbfe,
+    name: "Volunteer-analysis"
   }, {
     path: "/Volunteer/closeVolunteers",
     component: _17b08da8,

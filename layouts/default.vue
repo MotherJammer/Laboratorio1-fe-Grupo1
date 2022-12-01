@@ -12,29 +12,37 @@
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
           <b-collapse id="nav-collapse" is-nav>
-            <b-navbar-nav>
-              <b-nav-item href="/Emergency/addEmergency"
-                >Agregar emergencia</b-nav-item
+            <b-nav-item-dropdown class="text-light mx-auto" text="Emergencias">
+              <b-dropdown-item href="/Emergency/addEmergency"
+                >Agregar emergencia</b-dropdown-item
               >
-              <b-nav-item href="/Emergency/modifyEmergency"
-                >Modificar emergencia</b-nav-item
+              <b-dropdown-item href="/Emergency/modifyEmergency"
+                >Modificar emergencia</b-dropdown-item
               >
-              <b-nav-item href="/Emergency/getEmergency"
-                >Consultar emergencia</b-nav-item
+              <b-dropdown-item href="/Emergency/getEmergency"
+                >Consultar emergencia</b-dropdown-item
               >
-              <b-nav-item href="/Emergency/deleteEmergency"
-                >Borrar emergencia</b-nav-item
+              <b-dropdown-item href="/Emergency/deleteEmergency"
+                >Borrar emergencia</b-dropdown-item
               >
-              <b-nav-item href="/Volunteer/addVolunteer"
-                >Agregar voluntario</b-nav-item
+              <b-dropdown-item href="/Emergency/finishedEmergency"
+                >Emergencias finalizadas</b-dropdown-item
               >
-              <b-nav-item href="/Volunteer/closeVolunteers"
-                >Voluntarios cercanos</b-nav-item
+            </b-nav-item-dropdown>
+            <b-nav-item-dropdown class="text-light mx-auto" text="Voluntarios">
+              <b-dropdown-item href="/Volunteer/addVolunteer"
+                >Agregar voluntario</b-dropdown-item
               >
-              <b-nav-item href="/Emergency/finishedEmergency"
-                >Emergencias finalizadas</b-nav-item>   
-                         
-            </b-navbar-nav>
+              <b-dropdown-item href="/Volunteer/closeVolunteers"
+                >Voluntarios cercanos</b-dropdown-item
+              >
+              <b-dropdown-item href="/Volunteer/affectedVolunteers">
+                Voluntarios afectados
+              </b-dropdown-item>
+              <b-dropdown-item href="/Volunteer/analysis"
+                >Análisis de datos
+              </b-dropdown-item>
+            </b-nav-item-dropdown>
           </b-collapse>
         </b-navbar>
       </div>

@@ -14,6 +14,13 @@
     "_name": "_e63995d0"
   },
   {
+    "name": "Emergency-FinishedEmergency",
+    "path": "/Emergency/FinishedEmergency",
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/FinishedEmergency.vue",
+    "chunkName": "pages/Emergency/FinishedEmergency",
+    "_name": "_6f605711"
+  },
+  {
     "name": "Emergency-getEmergency",
     "path": "/Emergency/getEmergency",
     "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Emergency/getEmergency.vue",
@@ -33,6 +40,20 @@
     "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Volunteer/addVolunteer.vue",
     "chunkName": "pages/Volunteer/addVolunteer",
     "_name": "_a85c5be4"
+  },
+  {
+    "name": "Volunteer-affectedVolunteers",
+    "path": "/Volunteer/affectedVolunteers",
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Volunteer/affectedVolunteers.vue",
+    "chunkName": "pages/Volunteer/affectedVolunteers",
+    "_name": "_36dbc622"
+  },
+  {
+    "name": "Volunteer-analysis",
+    "path": "/Volunteer/analysis",
+    "component": "/home/motherjammer/Documents/TBD/Laboratorio/Laboratorio1-fe-Grupo1/pages/Volunteer/analysis.vue",
+    "chunkName": "pages/Volunteer/analysis",
+    "_name": "_dcaccbfe"
   },
   {
     "name": "Volunteer-closeVolunteers",
