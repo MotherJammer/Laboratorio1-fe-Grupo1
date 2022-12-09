@@ -16,10 +16,10 @@
                 <input
                   name="comuna"
                   type="radio"
-                  v-bind:value="item.id"
+                  v-bind:value="item.comuna"
                   v-model="id_com"
                 />
-                <label>{{ item.nombre }}</label>
+                <label>{{ item.comuna }}</label>
               </div>
             </div>
             <div id="btn_upload">
@@ -49,7 +49,7 @@ export default {
   data: () => {
     return {
       comunas: [],
-      id_com: 0,
+      id_com: "",
       averageHabilities: 0,
     };
   },
@@ -58,19 +58,22 @@ export default {
   },
   methods: {
     retrieveComunas() {
-      //Petición por axios, donde la respuesta se asigna
-      //a la variable comunas
-      //.then((response) => {this.comunas = response.data})
+      axios
+        .get("http://localhost:8081/promedio")
+        .then((response)=>{
+          this.comunas = response.data;
+        })
+        .catch((error)=>{
+          console.log(error);
+        });
     },
     get_AverageHabilities() {
-      //Por hacer. Una idea sería:
-      //Armar el data format con el id_com para realizar una petición
-      //post con axios. Esa petición es la que obtendría la cantidad
-      //promedio de habilidades de los voluntarios de la comuna determinada
-      //por id_com.
-      //La respuesta debe ser asignada a la variable averageHabilities
-      //.then((response) => {this.averageHabilities = response.data})
-    },
+      this.comunas.forEach((posicion)=>{
+        if(posicion.comuna==this.id_com){
+          this.averageHabilities = posicion.promedio;
+        }
+      });
+    }, 
   },
 };
 </script>
